@@ -61,7 +61,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/s">bootstrap theme</a></section><section class="header4 cid-sh4f8OSFh1 mbr-fullscreen" id="header4-h">
+<section class="engine"><a href="https://mobirise.info/x">css templates</a></section><section class="header4 cid-sh4f8OSFh1 mbr-fullscreen" id="header4-h">
 
     
     
@@ -77,10 +77,14 @@
         
 	    function loginHandler(form)
 	    {
+	        console.log(form);
 	        let invalid = document.getElementById("login-invalid-cred");
 	        let error = document.getElementById("login-error-connecting");
+	        let button = form.children[1].children[2].children[0]; // Not elegant, but it works
 	        invalid.hidden = true;
 	        error.hidden = true;
+	        button.disabled = true;
+	        document.body.style.cursor='wait';
 	        
 	        let email = form.elements.email.value;
 	        let pass = form.elements.password.value;
@@ -95,11 +99,15 @@
             
             xmlHttp.onload = ()=>{
                 invalid.hidden = false;
+	            button.disabled = false;
+	            document.body.style.cursor='default';
             };
             xmlHttp.onerror = ()=>{
                 error.hidden = false;
+	            button.disabled = false;
+	            document.body.style.cursor='default';
             };
-            setTimeout(() => { xmlHttp.send(null); }, 500);
+            xmlHttp.send(null);
 	    }
 	</script>
 	
@@ -123,7 +131,7 @@
         
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto">
-                <form onload="onLoad(this)" action="javascript:void(0)" class="mx-auto" onsubmit="loginHandler(this); return false;">
+                <form action="javascript:void(0)" class="mx-auto" onsubmit="loginHandler(this); return false;">
                     <div class="">
                         <!--<div hidden="hidden" data-form-alert class="alert alert-success col-12">Invalid Credentials. Please re-check your email &amp; password.</div>-->
                         <div hidden="hidden" id="login-invalid-cred" data-form-alert-danger="" class="alert alert-danger col-12">Invalid Credentials. Please re-check your email and password.</div>
